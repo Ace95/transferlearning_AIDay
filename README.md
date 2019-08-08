@@ -1,5 +1,5 @@
 # Transfer Learning: Adapting Models for Custom Applications
-This repository contains the main arguments, papers and usefull links used in the homonymous session during the 2019 AI Day in Rome promoted by Microsoft and organized by the local .Net community. If you wold like to improve this repo with more exemples, cases or papers; please feel free to post your opinions or to contact me.
+This repository contains the main arguments and papers with some usefull links used in the homonymous session during the 2019 AI Day in Rome promoted by Microsoft and organized by the local .Net community. If you wold like to improve this repo with more exemples, cases or papers; please feel free to post your opinions or to contact me.
 
 For the practical exemple I re-trained a MobileNet NN and converted it into a kmodel for the Sipeed MaixPy AI Board. You can buy the board for about 20€, but I'm open to implement new examples on different devices (I'm also working on the Nvidia JatsonNano and the Raspeberry Pi)
 
