@@ -11,18 +11,6 @@ from keras.layers import Dense, GlobalAveragePooling2D
 from keras.applications import imagenet_utils, MobileNet
 from keras.applications.mobilenet import preprocess_input
 
-# Image pre-processing (MobileNet accepts 244x224 images as input)
-
-def prepare_image(file):
-
-    img_path = './images/'
-    img = image.load_img(img_path + file, target_size=(224,224))
-    img_array = image.img_to_array(img)
-    img_array_expanded_dims = np.expand_dims(img_array, axis=0)
-
-    return keras.applications.mobilenet.preprocess_input(img_array_expanded_dims)
-
-
 # Applying TranserLearning, we freeze the base layer and retrain the one o nthe top
 
 starting_model = MobileNet(weights="imagenet",include_top=False) # this line imports the mobilenet model trained on imagenet dataset and discard the last 1000 neurons layer 
@@ -58,7 +46,6 @@ model.compile(optimizer='Adam',loss='categorical_crossentropy',metrics=['accurac
 step_size_train = train_generator.n//train_generator.batch_size
 model.fit_generator(generator=train_generator,steps_per_epoch=step_size_train,epochs=10)
 
-preprocessed_image = prepare_image('pikachu.jpeg')
-predictions = model.predict(preprocessed_image)
-print(predictions)
+model.save('./models/new_model_pokemon.h5')
+
 
