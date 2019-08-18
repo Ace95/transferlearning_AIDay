@@ -17,7 +17,9 @@ For the practical exemple I re-trained a MobileNet NN and converted it into a km
 # Example 1: TL applied on MobileNet to train a custom model for the MaixPy AI board
 For the first example we are going to re-train a MobileNet in order to obtain a real pokedex that can recognize Pikachu and Charizard insted of real animals. I decided to use this type of CNN because it's the most suitable for mabile and IoT applications. More informations about MobileNets can be found in the paper folder, while the NNs available through Keras can be found <a href="https://keras.io/applications/#mobilenet"> here </a>.
 
+<div style="text-align: middle"> 
 <img src="https://www.diregiovani.it/wp-content/uploads/2016/07/pokemon-go-list.jpg"> 
+</div>
 
 # Refrences 
 - https://keras.io/applications/#mobilenet
