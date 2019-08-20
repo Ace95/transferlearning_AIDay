@@ -35,6 +35,8 @@ The last script,"test_newmodels.py", is very similar to the first one used to te
 
 <img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY">
 </ul>
+
+
 # Refrences 
 - https://keras.io/applications/#mobilenet
 - https://towardsdatascience.com/transfer-learning-using-mobilenet-and-keras-c75daf7ff299
