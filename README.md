@@ -28,7 +28,12 @@ Firt of all let's execute the "mobilenet_test.py" script: this simple code impor
 
 <li><b> Preprare your dataset </b></li>
 
-If everything is working fine, we can start to apply the transfer learning. We want to re-train the top layers of our NN in order to recognize two different pokemon instead of real animals. In order to do so, we need some images: for this reason I've included a script that allows you to download and store some pictures from google images. You can find the complete documentation for the package <a href="https://github.com/hardikvasa/google-images-download"> here </a>, while to run the script you need to install the module using the command <q> pip install google_images_download </q>. Now we are ready to run the "TL_mobilenet.py" script.
+If everything is working fine, we can start to apply the transfer learning. We want to re-train the top layers of our NN in order to recognize two different pokemon instead of real animals. In order to do so, we need some images: for this reason I've included a script that allows you to download and store some pictures from google images. You can find the complete documentation for the package <a href="https://github.com/hardikvasa/google-images-download"> here </a>, while to run the script you need to install the module using the command 
+
+``` bashrc
+$ pip install google_images_download 
+```
+Now we are ready to run the "TL_mobilenet.py" script.
 
 
 <li><b> Re-train the top layers and save your new model </b></li>
@@ -44,10 +49,9 @@ x = Dense (1024,activation='relu')(x)
 x = Dense (512,activation='relu')(x)
 preds = Dense(2,activation='softmax')(x)
 model = Model(inputs=starting_model.input,outputs=preds)
-
 ```
 
-(Note that number of neurons in the last layer, "preds", depends on the number of classes you want to detect!).
+Note that number of neurons in the last layer, "preds", depends on the number of classes you want to detect.
 After doing that we set the all the layers but the top ones as non-trainable and finally we can re-train our top layers and save our model as "new_pokemon_model.h5".
 
 
@@ -65,7 +69,6 @@ train_generator = train_datagen.flow_from_directory('./images',
                                                     batch_size = 32,
                                                     class_mode = 'categorical',
                                                     shuffle= True)
-
 ```
 
 <li><b> Test your new model </b></li>
