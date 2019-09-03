@@ -35,7 +35,7 @@ If everything is working fine, we can start to apply the transfer learning. We w
 
 Let's give a look at the re-training script include in this repo. After importing all the modules, we initialize the starting model: the code has been set up to use the MobileNet NN provided in Keras without the top layer - the top layer is the one responsable for the final classification, so in this way we can take adavantage of pre-trained weights obtained on the ImageNet dataset while we will classify our custom objects. Now we need to define a new top for our NN, so we create some layers to use as top, including a dropout layer to prevent overfitting. 
 
-'''
+```
 x = starting_model.output 
 x = GlobalAveragePooling2D()(x)
 x = Dense (1024,activation='relu')(x)
@@ -44,12 +44,14 @@ x = Dense (1024,activation='relu')(x)
 x = Dense (512,activation='relu')(x)
 preds = Dense(2,activation='softmax')(x)
 model = Model(inputs=starting_model.input,outputs=preds)
-'''
+
+```
 
 (Note that number of neurons in the last layer, "preds", depends on the number of classes you want to detect!).
 After doing that we set the all the layers but the top ones as non-trainable and finally we can re-train our top layers and save our model as "new_pokemon_model.h5".
 
-'''
+
+```
 for layer in model.layers[:20]:
     layer.trainable = False
 
@@ -63,7 +65,8 @@ train_generator = train_datagen.flow_from_directory('./images',
                                                     batch_size = 32,
                                                     class_mode = 'categorical',
                                                     shuffle= True)
-'''
+
+```
 
 <li><b> Test your new model </b></li>
 
