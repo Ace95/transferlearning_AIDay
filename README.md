@@ -77,7 +77,26 @@ The last script,"test_newmodels.py", is very similar to the first one used to te
 
 
 <img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY">
+
+<li><b>Convert Keras model to kmodel </b></li>
+the last step we need to complete is the conversion of our keras model (saved in the format .h5) into a kmodel, the type of NN that the MaixPy Bit board supports. In order to do so, we need to set up linux machine. I personally recommend using <a href="https://www.ubuntu-it.org/download"> Ubuntu16+ </a>, but you shouldn't find any difficulties with other Linux releases. Once the machine is ready, virtual or not, we need to install TensorFlow and clone the <a href="https://github.com/sipeed/Maix_Toolbox"> Maix toolbox repository </a>.
+
+```bashrc
+$ pip install tensorflow
+$ git clone https://github.com/sipeed/Maix_Toolbox <directory>
+```
+Now we are ready to convert our model. First we need to convert the keras model in a tflite model, then we can convert the tflite model into the final kmodel using the tool provided by Sipeed.
+
+```bashrc
+$ tflite_convert  --output_file=poke_model.tflite --keras_model_file=new_pokemon_model.h5
+$ ./tflite2kmodel.sh poke_model.tflite
+```
+
+
 </ul>
+
+
+
 
 
 # References 
