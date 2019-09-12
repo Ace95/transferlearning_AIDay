@@ -1,7 +1,7 @@
 import numpy as np
 import keras 
 from keras import backend as K 
-from keras.layers.core import Dense, Activation
+from keras.layers.core import Dense, Activation, Dropout
 from keras.optimizers import Adam 
 from keras.metrics import categorical_crossentropy
 from keras.preprocessing.image import ImageDataGenerator
@@ -18,10 +18,10 @@ starting_model = MobileNet(weights="imagenet",include_top=False) # this line imp
 x = starting_model.output 
 x = GlobalAveragePooling2D()(x)
 x = Dense (1024,activation='relu')(x)
+x = Dropout(0.5)(x) 
 x = Dense (1024,activation='relu')(x)
 x = Dense (512,activation='relu')(x)
-preds = Dense(2,activation='softmax')(x)
-
+preds = Dense(2,activation='softmax')(x)  # Note that number of neurons in the last layer depends on the number of classes you want to detect
 model = Model(inputs=starting_model.input,outputs=preds)
 
 # We want to use the pre-trained weights, only the last 20 layers will be re-trained 
