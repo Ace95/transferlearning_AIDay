@@ -8,7 +8,7 @@ from keras.applications.mobilenet import preprocess_input
 # Importing MobileNet keras model
 mobile = keras.applications.mobilenet.MobileNet()
 
-# Image pre-processing (MobileNet accepts 224x224 images as inputt)
+# Image pre-processing (MobileNet accepts 224x224 images as input)
 
 def prepare_image(file):
 
