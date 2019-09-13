@@ -3,10 +3,15 @@ This repository contains the main arguments and papers with some useful links us
 
 For the practical exemple I re-trained a MobileNet NN and converted it into a kmodel for the Sipeed MaixPy AI Board. You can buy the board for about 20€, but I'm open to implement new examples on different devices (I'm also working on the Nvidia JatsonNano and the Raspeberry Pi)
 
-# Environment requirements
-- A linux system for the conversion from keras model to kmodel supported by the MaixPy. I Recommend Ubuntu 16+ (you can also run it on a virtual machine)
-- Python 3.5+
-- Latest TensorFlow and Keras for Python releases 
+# Set up your environment 
+We need to set up a linux system for the conversion from keras model to kmodel supported by the MaixPy. I Recommend Ubuntu 16+ (you can also run it on a virtual machine). Once the machine is ready, we install <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html"> Miniconda </a>. After that we have to run the following commands
+
+
+``` bashrc
+$ conda create -n ml python=3.6 tensorflow=1.12 keras pillow numpy
+$ conda activate ml
+```
+NOTE - Linux is only needed for the final part, you can run all the other scrips in any OS with python and tensorflow installed.
 
 # Why should you use transfer learning?
 - Difficulties in the creation of the datasets
@@ -79,10 +84,9 @@ The last script,"test_newmodels.py", is very similar to the first one used to te
 <img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY">
 
 <li><b>Convert Keras model to kmodel </b></li>
-the last step we need to complete is the conversion of our keras model (saved in the format .h5) into a kmodel, the type of NN that the MaixPy Bit board supports. In order to do so, we need to set up linux machine. I personally recommend using <a href="https://www.ubuntu-it.org/download"> Ubuntu16+ </a>, but you shouldn't find any difficulties with other Linux releases. Once the machine is ready, virtual or not, we need to install TensorFlow and clone the <a href="https://github.com/sipeed/Maix_Toolbox"> Maix toolbox repository </a>.
+the last step we need to complete is the conversion of our keras model (saved in the format .h5) into a kmodel, the type of NN that the MaixPy Bit board supports. In order to do so, we need to set up linux machine. I personally recommend using <a href="https://www.ubuntu-it.org/download"> Ubuntu16+ </a>, but you shouldn't find any difficulties with other Linux releases. Once the machine is ready, virtual or not, we need to clone the <a href="https://github.com/sipeed/Maix_Toolbox"> Maix toolbox repository </a>.
 
 ```bashrc
-$ pip install tensorflow
 $ git clone https://github.com/sipeed/Maix_Toolbox <directory>
 ```
 Now we are ready to convert our model. First we need to convert the keras model in a tflite model, then we can convert the tflite model into the final kmodel using the tool provided by Sipeed.
