@@ -17,7 +17,7 @@ def prepare_image(file):
 
     return keras.applications.mobilenet.preprocess_input(img_array_expanded_dims)
 
-model = load_model('./models/new_model_pokemon.h5')
+model = load_model('./models/new_pokemon_model.h5')
 preprocessed_image = prepare_image('/charizard/2.61IbcCuJ3sL._SX425_.jpg')
 predictions = model.predict(preprocessed_image)
 
