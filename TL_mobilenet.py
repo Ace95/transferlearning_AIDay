@@ -17,19 +17,18 @@ starting_model = MobileNet(input_shape=(224, 224, 3), alpha = 0.75,depth_multipl
 
 x = starting_model.output 
 x = GlobalAveragePooling2D()(x)
-x = Dense (1024,activation='relu')(x)
+x = Dense(1024,activation='relu')(x)
 x = Dropout(0.5)(x)
 x = Dense (512,activation='relu')(x)
 preds = Dense(2,activation='softmax')(x)  # Note that number of neurons in the last layer depends on the number of classes you want to detect
 model = Model(inputs=starting_model.input,outputs=preds)
 
-# We want to use the pre-trained weights, only the last 20 layers will be re-trained 
+# We want to use the pre-trained weights
 
-for layer in model.layers[:20]:
-    layer.trainable = False
-
-for  layer in model.layers[20:]:
-    layer.trainable = True 
+for layer in model.layers[:86]:
+    layer.trainable=False
+for layer in model.layers[86:]:
+    layer.trainable=True
 
 train_datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
 train_generator = train_datagen.flow_from_directory('./images',
