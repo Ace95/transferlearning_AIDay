@@ -1,7 +1,7 @@
 # Transfer Learning: Adapting Models for Custom Applications
 This repository contains the main arguments and papers with some useful links used in the homonymous session during the 2019 AI Day in Rome promoted by Microsoft and organized by the local .Net community. If you would like to improve this repo with more exemples, cases or papers; please feel free to post your opinions or to contact me.
 
-For the practical example I re-trained a MobileNet NN and converted it into a kmodel for the Sipeed MaixPy AI Board. You can buy the board for about 20€, but I'm open to implement new examples on different devices (I'm also working on the Nvidia JatsonNano and the Raspeberry Pi)
+For the practical example I re-trained a MobileNet NN and converted it into a kmodel for the Sipeed MaixPy AI Board. You can buy the board for about 20€, but I'm open to implement new examples on different devices (I'm also working on the Nvidia JatsonNano and the Raspberry Pi 3)
 
 # Set up your environment 
 We need to set up a linux system for the conversion from keras model to kmodel supported by the MaixPy. I Recommend Ubuntu 16+ (you can also run it on a virtual machine). Once the machine is ready, we install <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html"> Miniconda </a>. After that we have to run the following commands
@@ -29,7 +29,6 @@ First of all let's execute the "mobilenet_test.py" script: this simple code impo
 (Note that this step may take some time depending on your pc and GPU configurations)
 
 <img src="https://drive.google.com/uc?id=1N-gGAXOa3CjbYn2mM2fOfpQ-FbUjh0Au"> 
-
 
 <li><b> Prepare your dataset </b></li>
 
