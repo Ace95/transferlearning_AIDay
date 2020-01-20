@@ -83,6 +83,7 @@ The last script,"test_newmodels.py", is very similar to the first one used to te
 
 <img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY">
 
+
 <li><b>Convert Keras model to kmodel </b></li>
 the last step we need to complete is the conversion of our keras model (saved in the format .h5) into a kmodel, the type of NN that the MaixPy Bit board supports. In order to do so, we need to set up linux machine. I personally recommend using <a href="https://www.ubuntu-it.org/download"> Ubuntu16+ </a>, but you shouldn't find any difficulties with other Linux releases. Once the machine is ready, virtual or not, we need to clone the <a href="https://github.com/sipeed/Maix_Toolbox"> Maix toolbox repository </a>.
 
@@ -104,7 +105,13 @@ After flashing the obtained model and the "detect.py" on an SD card and uploaded
 </ul>
 
 
+# Example 2: Transfer Learning with ML.NET
 
+During the past year I got some occasions to re-present my session in different conferences and during these I've been aske many times how you could implement this kind of application in the .NET framework. The answer? Simply by using ML.NET! The new ML and AI dedicate Microsoft framework for the .NET world. You can find <a href="https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_TensorFlow"> here </a> the step-by-step guided on how to implement a pre-trained TensorFlow model in a .NET application for Image Classification. (Note: I'm not goint to copy-paste their work here, so just check out the official Microsoft repository and ask there for any issue you may found!). If yuo would like to try this out, you need:
+
+  - Visual Studio 2017+
+  - ML.NET extention 
+  - A bit of knowledge of C#
 
 
 # References 
@@ -113,3 +120,4 @@ After flashing the obtained model and the "detect.py" on an SD card and uploaded
 - https://machinelearningmastery.com/transfer-learning-for-deep-learning/
 - https://www.instructables.com/id/Transfer-Learning-With-Sipeed-MaiX-and-Arduino-IDE/
 - https://www.sipeed.com/
+- https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_TensorFlow
