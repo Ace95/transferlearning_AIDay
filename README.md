@@ -28,7 +28,7 @@ First of all let's execute the "mobilenet_test.py" script: this simple code impo
 
 (Note that this step may take some time depending on your pc and GPU configurations)
 
-<img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY"> 
+![Configuration Test](https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY)
 
 <li><b> Prepare your dataset </b></li>
 
