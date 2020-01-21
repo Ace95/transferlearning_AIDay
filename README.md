@@ -98,7 +98,7 @@ $ ./tflite2kmodel.sh poke_model.tflite
 <li><b>Final result </b></li>
 After flashing the obtained model and the "detect.py" on an SD card and uploaded the MaixPy firmware on the board, we should be able to run our model on the board. The final result should be something similar to this:
 
-<img src="https://drive.google.com/uc?id=1D7Su34vobOd8kwXlRReE_QiAcJAzfM-M">
+![](https://github.com/Ace95/transferlearning_AIDay/blob/master/result.jpg?raw=true)
 
 </ul>
 
