@@ -79,8 +79,7 @@ train_generator = train_datagen.flow_from_directory('./images',
 
 The last script,"test_newmodels.py", is very similar to the first one used to test the mobilenet but this time the new pokemon model is loaded and tested on an image. If everything is working fine you should see a window opening with an image and a probability score, like this :
 
-
-<img src="https://drive.google.com/uc?id=1rhcL-7tAdnWJt4Bow6j8EmB5f4-POtvY">
+![](https://github.com/Ace95/transferlearning_AIDay/blob/master/charizard_nn.PNG?raw=true)
 
 
 <li><b>Convert Keras model to kmodel </b></li>
